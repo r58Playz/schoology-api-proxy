@@ -11,7 +11,7 @@ const handler = async (req, res) => {
 
   try {
     //console.log("req.headers " + req.headers["Authorization"]);
-    console.log("req.getHeaders() " + request.getHeader("Authorization"));
+    console.log("req.getHeaders() " + req.getHeaders().authorization);
     const response = await fetch(url, {
       headers: {
         Accept: 'application/json',
