@@ -11,11 +11,11 @@ const handler = async (req, res) => {
 
   try {
     //console.log("req.headers " + req.headers["Authorization"]);
-    console.log("req.getHeaders() " + req.headers.authorization);
+    //console.log("req.getHeaders() " + req.headers.authorization);
     const response = await fetch(url, {
       headers: {
         Accept: 'application/json',
-        Authorization: req.headers["Authorization"],
+        Authorization: req.headers.authorization,
       },
     });
 
