@@ -10,6 +10,8 @@ const handler = async (req, res) => {
   let url = `https://api.schoology.com/v1/${apiAddress}`;
 
   try {
+    console.log("req.headers " + req.headers["Authorization"]);
+    console.log("req.getHeaders() " + request.getHeaders().Authorization);
     const response = await fetch(url, {
       headers: {
         Accept: 'application/json',
