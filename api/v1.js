@@ -14,19 +14,20 @@ const handler = async (req, res) => {
     console.log("req.getHeaders() " + request.getHeader("Authorization"));
     const response = await fetch(url, {
       headers: {
+        Accept: 'application/json',
         Authorization: req.headers["Authorization"],
       },
     });
 
     if (!response.ok) {
-      res.status(response.status).end(response.statusText);
+      res.status(response.status).json(response.statusText);
       return;
     }
     const data = await response.json();
 
-    res.status(200).end(data);
+    res.status(200).json(data);
   } catch (error) {
-    res.status(500).end(error);
+    res.status(500).json(error);
   }
 };
 
